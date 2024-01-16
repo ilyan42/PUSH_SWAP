@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/16 16:42:11 by ilyanbendib      ###   ########.fr       */
+/*   Created: 2023/11/15 11:34:00 by ilbendib          #+#    #+#             */
+/*   Updated: 2023/12/11 18:42:26 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "../LIBFT/libft.h"
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
-# include <limits.h>
-
-typedef struct s_list
+int	ft_putchar(char c)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
-#endif
+	return (write (1, &c, 1));
+}

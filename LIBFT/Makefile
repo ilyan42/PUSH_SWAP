@@ -6,7 +6,7 @@
 #    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/29 20:32:47 by ilbendib          #+#    #+#              #
-#    Updated: 2023/11/17 10:22:40 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/15 15:36:08 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,7 @@ _SRCS = ft_atoi.c\
 	ft_substr.c\
 	ft_tolower.c\
 	ft_toupper.c\
-
-BONUS =	ft_lstnew_bonus.c\
+	ft_lstnew_bonus.c\
 	ft_lstadd_front_bonus.c\
 	ft_lstsize_bonus.c\
 	ft_lstlast_bonus.c\
@@ -53,11 +52,19 @@ BONUS =	ft_lstnew_bonus.c\
 	ft_lstdelone_bonus.c\
 	ft_lstclear_bonus.c\
 	ft_lstiter_bonus.c\
-	ft_lstmap_bonus.c
-
+	ft_lstmap_bonus.c\
+	ft_printf.c\
+	ft_putchar.c\
+	ft_putnbr.c\
+	ft_putstr.c\
+	ft_strlen_printf.c\
+	ft_putnbr_unsigned.c\
+	ft_print_hexa.c\
+	ft_print_ptr.c\
+	get_next_line.c\
+	get_next_line_utils.c
+	
 SRC_DIR = .
-
-BONUS_OBJS = $(BONUS:.c=.o)
 
 SRCS = $(_SRCS:%=$(SRC_DIR)/%)
 
@@ -67,9 +74,9 @@ HEADERS_DIR = .
 
 HEADERS = $(_HEADERS:%=$(HEADERS_DIR)/%)
 
-CC = cc
+CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g3 -Wall -Wextra -Werror
 
 AR = ar
 
@@ -78,7 +85,6 @@ ARFLAGS = rcs
 OBJS = $(SRCS:.c=.o)
 
 NAME = libft.a
-
 
 all: $(NAME)
 
@@ -89,14 +95,11 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(GET_NEXT_LINE_OBJS)
 
 fclean: clean 
 	rm -f $(NAME)
 
-bonus : $(OBJS) $(BONUS_OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
-
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re 

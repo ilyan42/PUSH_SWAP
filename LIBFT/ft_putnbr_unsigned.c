@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/16 16:42:11 by ilyanbendib      ###   ########.fr       */
+/*   Created: 2023/11/15 13:48:19 by ilbendib          #+#    #+#             */
+/*   Updated: 2023/12/11 18:42:03 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "../LIBFT/libft.h"
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
-# include <limits.h>
-
-typedef struct s_list
+int	ft_putnbr_unsigned(unsigned int nb)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	int	count;
 
-#endif
+	count = 0;
+	if (nb > 9)
+	{
+		count += ft_putnbr_unsigned(nb / 10);
+		count += ft_putnbr_unsigned(nb % 10);
+	}
+	else
+		count += ft_putchar(nb + 48);
+	return (count);
+}
