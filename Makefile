@@ -6,30 +6,25 @@
 #    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2024/01/16 14:47:37 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2024/01/24 19:08:05 by ilyanbendib      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-_SRCS = 		src/main.c
-NAME = so_long
-_HEADERS = so_long.h
-CC = gcc
-CFLAGS = -g3 -Wall -Wextra -Werror
-
-SRC_DIR = .
-
-SRCS = $(_SRCS:%=$(SRC_DIR)/%)
-
-
-HEADERS_DIR = .
-
-HEADERS = $(_HEADERS:%=$(HEADERS_DIR)/%)
-
-AR = ar
-
-ARFLAGS = rcs
+SRCS = 			src/main.c\
+				src/ft_init_list_a.c\
+				src/ft_utils.c\
+				src/moves/push_element.c\
+				src/moves/reverse_rotate_element.c\
+				src/moves/rotate_element.c\
+				src/moves/swap_element.c\
 
 OBJS = $(SRCS:.c=.o)
+
+NAME = push_swap
+
+CC = gcc -g3
+CFLAGS = -Wall -Wextra -Werror
+LDFLAGS = -Llibft -lft
 
 LIBFT_DIR = ./LIBFT
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -37,19 +32,24 @@ LIBFT_MAKE = $(MAKE) -C $(LIBFT_DIR)
 
 all: $(NAME)
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -I$(HEADERS_DIR) -c $< -o $@
+$(NAME): $(OBJS) $(LIBFT)
+	$(LIBFT_MAKE)
+	$(CC) $(CFLAGS) -Iinclude -Ilibft $(OBJS) -o $(NAME) $(LDFLAGS)
 
-$(NAME): $(OBJS)
-	$(MAKE) all -C ./LIBFT
-	$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
+%.o: %.c include/minitalk.h
+	$(CC) $(CFLAGS) -Iinclude -Ilibft -c $< -o $@
+
+$(LIBFT):
+	$(LIBFT_MAKE)
 
 clean:
 	rm -f $(OBJS)
+	$(LIBFT_MAKE) clean
 
 fclean: clean
 	rm -f $(NAME)
+	$(LIBFT_MAKE) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: clean fclean re all
