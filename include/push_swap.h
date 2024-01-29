@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/25 13:53:57 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/29 11:50:32 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,19 @@ void	rra(t_lst **a);
 void	rrb(t_lst **b);
 void	rrr(t_lst **a, t_lst **b);
 void	sa(t_lst **a);
+void	sb(t_lst **b);
+void	ss(t_lst **a, t_lst **b);
+
+/**** FT_SORT ****/
+
+int		list_is_sorted(t_lst *lst);
+void	sort_three_element(t_lst **lst);
 
 /**** FT_UTILS ****/
 
 long ft_atol(char *str);
 t_lst	*ft_lstlast_node(t_lst *lst);
+size_t size_lst(t_lst *lst);
+t_lst *ft_lstmax(t_lst *lst);
 
 #endif

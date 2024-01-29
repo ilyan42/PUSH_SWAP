@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:01:35 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/22 16:16:49 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/29 11:46:00 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,35 @@ long ft_atol(char *str)
 		i++;
 	}
 	return (nb * sign);
+}
+
+size_t size_lst(t_lst *lst)
+{
+	int	count;
+
+	count = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
+}
+
+t_lst *ft_lstmax(t_lst *lst)
+{
+	t_lst *max;
+	int max_element;
+	
+	max_element = 0;
+	while(lst)
+	{
+		if (lst->nb > max_element)
+		{
+			max = lst;
+			max_element = lst->nb;
+		}
+		lst = lst->next;
+	}
+	return (max);
 }

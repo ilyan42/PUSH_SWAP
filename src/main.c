@@ -3,70 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:43:50 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/29 11:27:32 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/29 11:56:42 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-size_t size_lst(t_lst *lst)
-{
-	int	count;
-
-	count = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		count++;
-	}
-	return (count);
-}
-
-t_lst *ft_lstmax(t_lst *lst)
-{
-	t_lst *max;
-	int max_element;
-	
-	max_element = 0;
-	while(lst)
-	{
-		if (lst->nb > max_element)
-		{
-			max = lst;
-			max_element = lst->nb;
-		}
-		lst = lst->next;
-	}
-	return (max);
-}
-void	sort_three_element(t_lst **lst)
-{
-	t_lst *max_element;
-
-	max_element = ft_lstmax(*lst);
-	if (*lst == max_element)
-		ra(lst);
-	else if ((*lst)->next == max_element)
-		rra(lst);
-	if ((*lst)->nb > (*lst)->next->nb)
-		sa(lst);
-}
-
-int	list_is_sorted(t_lst *lst)
-{
-	if (!lst)
-		return (1);
-	while (lst->next != NULL)
-	{
-		if (lst->nb > lst->next->nb)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
-}
 
 int main(int ac, char **av)
 {
@@ -84,8 +28,8 @@ int main(int ac, char **av)
 			sa(&a);
 		else if (size_lst(a) == 3)
 			sort_three_element(&a);
-		else
-			sort_stack(a);
+		// else
+		// 	sort_stack(a);
 	}
 	while (a)
 	{
