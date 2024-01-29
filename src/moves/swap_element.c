@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 19:04:16 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/24 19:07:32 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/25 13:54:31 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,31 @@
 
 void	swap_element(t_lst **lst)
 {
-	if (!(*lst) || !(*lst)->next)
-		return;
+	t_lst	*tmp;
 
-	t_lst *first = *lst;
-	t_lst *second = (*lst)->next;
-
-	first->next = second->next;
-	second->next = first;
-	*lst = second;
+	if (!(*lst) || (*lst)->next == NULL)
+		return ;
+	tmp = (*lst);
+	(*lst) = (*lst)->next;
+	tmp->next = (*lst)->next;
+	(*lst)->next = tmp;
 }
 
 void	sa(t_lst **a)
 {
 	swap_element(a);
-	ft_printf("sa\n\n");
+	ft_printf("sa\n");
 }
 
 void	sb(t_lst **b)
 {
 	swap_element(b);
-	ft_printf("sb\n\n");
+	ft_printf("sb\n");
+}
+
+void	ss(t_lst **a, t_lst **b)
+{
+	swap_element(a);
+	swap_element(b);
+	ft_printf("ss\n");
 }

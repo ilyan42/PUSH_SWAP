@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/24 19:07:44 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/25 13:53:57 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_lst
 	int nb;
 	void	*content;
 	struct s_lst	*next;
-	struct s_lst	*first;
 }					t_lst;
 
 /**** FT_INIT_LIST_A ****/

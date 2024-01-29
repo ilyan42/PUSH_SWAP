@@ -6,47 +6,47 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:55:46 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/24 18:08:18 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/25 14:12:59 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void reverse_rotate_element(t_lst **stack)
+void reverse_rotate_element(t_lst **lst)
 {
 	t_lst *last;
-	t_lst *second_last;
+	t_lst *tmp;
 
-	if (!(*stack) || !(*stack)->next)
+	if (!(*lst) || !(*lst)->next)
 		return ;
 
-	last = *stack;
-	second_last = NULL;
+	last = *lst;
+	tmp = NULL;
 	while (last->next != NULL)
 	{
-		second_last = last;
+		tmp = last;
 		last = last->next;
 	}
-	last->next = *stack;
-	*stack = last;
-	second_last->next = NULL;
+	last->next = *lst;
+	*lst = last;
+	tmp->next = NULL;
 }
 
 void	rra(t_lst **a)
 {
 	reverse_rotate_element(a);
-	ft_printf("rra\n\n");
+	ft_printf("rra\n");
 }
 
 void	rrb(t_lst **b)
 {
 	reverse_rotate_element(b);
-	ft_printf("rrb\n\n");
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_lst **a, t_lst **b)
 {
 	reverse_rotate_element(a);
 	reverse_rotate_element(b);
-	ft_printf("rrr\n\n");
+	ft_printf("rrr\n");
 }
