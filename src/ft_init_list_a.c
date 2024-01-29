@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:09:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/22 16:37:40 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/29 11:30:18 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ static void adds_a_new_node(t_lst **lst, int x)
 
 void ft_init_list_a(t_lst **a, char **av)
 {
-	long x;
-	int i;
-	
+	long	x;
+	int		i;
+
 	i = 0;
 	while(av[i])
 	{
