@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:43:50 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/31 15:39:40 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:11:41 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	else if (ac == 2)
 		av = ft_split(av[1], ' ');
 	ft_init_list_a(&a , av);
-	if (!list_is_sorted(&a))
+	if (!list_is_sorted(a))
 	{
 		if (size_lst(a) == 2)
 			sa(&a);

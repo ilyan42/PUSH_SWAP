@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_element.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 19:15:35 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/31 16:25:58 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:51:02 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

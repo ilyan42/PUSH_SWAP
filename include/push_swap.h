@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/30 19:19:52 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/31 19:10:43 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ss(t_lst **a, t_lst **b);
 
 /**** FT_SORT ****/
 
-int		list_is_sorted(t_lst **lst);
+bool		list_is_sorted(t_lst *stack);
 void	sort_three_element(t_lst **lst);
 void	sort_four_element(t_lst **a, t_lst **b);
 void sort_five_element(t_lst **a, t_lst **b);
