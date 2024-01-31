@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_list_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:09:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/30 16:48:14 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/31 11:34:51 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,6 @@ t_lst	*ft_lstlast_node(t_lst *lst)
 	}
 	return (lst);
 }
-
-// static void adds_a_new_node(t_lst **lst, int x)
-// {
-// 	t_lst	*node;
-// 	t_lst	*last_node;
-
-// 	if (!lst)
-// 		return ;
-// 	node = (t_lst *)malloc(sizeof(t_lst));
-// 	if (!node)
-// 		return ;
-// 	node->next = NULL;
-// 	node->nb = x;
-// 	if (!(*lst))
-// 	{
-// 		*lst = node;
-// 		node->content = NULL;
-// 	}
-// 	else
-// 	{
-// 		last_node = ft_lstlast_node(*lst);
-// 		last_node->next = node;
-// 		node->content = last_node;
-// 	}
-// }
 
 static void adds_a_new_node(t_lst **lst, int x)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:01:35 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/30 18:32:14 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/01/31 11:37:23 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_get_min_value(t_lst **lst)
     int min_value;
 
 	head = *lst;
-	min_value = head->nb;
+	min_value = INT_MAX;
     while (head)
     {
         if (head->nb < min_value)

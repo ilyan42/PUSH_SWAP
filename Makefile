@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
+#    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2024/01/29 15:32:44 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2024/01/31 11:20:51 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME = push_swap
 
 CC = gcc -g3
 CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -Llibft -lft
+LDFLAGS = -LLIBFT -lft
 
 LIBFT_DIR = ./LIBFT
 LIBFT = $(LIBFT_DIR)/libft.all
