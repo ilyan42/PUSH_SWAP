@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:43:50 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/31 13:50:39 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:39:40 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int main(int ac, char **av)
 	ft_init_list_a(&a , av);
 	if (!list_is_sorted(&a))
 	{
-		ft_printf("----ici-----");
 		if (size_lst(a) == 2)
 			sa(&a);
 		else if (size_lst(a) == 3)
@@ -35,7 +34,6 @@ int main(int ac, char **av)
 			sort_four_element(&a, &b);
 		else if (size_lst(a) == 5)
 			sort_five_element(&a, &b);
-		ft_printf("----ici-----");
 		if (size_lst(a) >= 6)
 			sort_stack(&a, &b);
 	}
