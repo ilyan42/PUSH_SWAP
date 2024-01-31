@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/29 11:50:32 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:19:52 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef struct s_lst
 {
 	int nb;
-	void	*content;
+	int content;
 	struct s_lst	*next;
 }					t_lst;
 
@@ -47,8 +47,11 @@ void	ss(t_lst **a, t_lst **b);
 
 /**** FT_SORT ****/
 
-int		list_is_sorted(t_lst *lst);
+int		list_is_sorted(t_lst **lst);
 void	sort_three_element(t_lst **lst);
+void	sort_four_element(t_lst **a, t_lst **b);
+void sort_five_element(t_lst **a, t_lst **b);
+void sort_stack(t_lst **a, t_lst **b);
 
 /**** FT_UTILS ****/
 
@@ -56,5 +59,7 @@ long ft_atol(char *str);
 t_lst	*ft_lstlast_node(t_lst *lst);
 size_t size_lst(t_lst *lst);
 t_lst *ft_lstmax(t_lst *lst);
+void ft_min_on_top(t_lst **lst);
+int ft_get_min(t_lst **lst);
 
 #endif
