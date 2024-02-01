@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/31 19:10:43 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 14:33:55 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,10 @@ size_t size_lst(t_lst *lst);
 t_lst *ft_lstmax(t_lst *lst);
 void ft_min_on_top(t_lst **lst);
 int ft_get_min(t_lst **lst);
+
+/**** FT_CHECK_ERRORS ****/
+
+bool	error_syntax(const char *str);
+bool	error_is_double(t_lst *a, int x);
 
 #endif

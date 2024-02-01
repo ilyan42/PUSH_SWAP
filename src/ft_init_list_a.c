@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_list_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:09:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/02/01 14:02:50 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:39:22 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ void ft_init_list_a(t_lst **a, char **av)
 	i = 0;
 	while(av[i])
 	{
+		if (error_syntax(av[i]))
+			exit(EXIT_FAILURE);
 		x = ft_atol(av[i]);
+		if (error_is_double(*a, (int)x))
+			exit(EXIT_FAILURE);
 		adds_a_new_node(a, (int)x);
 		i++;
 	}
