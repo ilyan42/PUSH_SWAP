@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:21:53 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/02/01 16:15:46 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:18:37 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	error_syntax(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!(str[i] == '+' || str[i] == '-' || ft_isdigit(str[i])))
@@ -46,7 +46,7 @@ void	free_stack(t_lst **stack)
 {
 	t_lst	*tmp;
 	t_lst	*current;
-	
+
 	if (!stack)
 		return ;
 	current = *stack;

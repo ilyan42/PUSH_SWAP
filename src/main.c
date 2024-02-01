@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:43:50 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/02/01 16:38:59 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 19:19:35 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,24 @@ static int	init_index(t_lst **stack_a)
 	return (1);
 }
 
-int main(int ac, char **av)
+static void	ft_choose_sorting(t_lst *a, t_lst *b)
 {
-	t_lst *a;
-	t_lst *b;
+	if (size_lst(a) == 2)
+		sa(&a);
+	else if (size_lst(a) == 3)
+		sort_three_element(&a);
+	else if (size_lst(a) == 4)
+		sort_four_element(&a, &b);
+	else if (size_lst(a) == 5)
+		sort_five_element(&a, &b);
+	else if (size_lst(a) >= 6)
+		sort_stack(&a, &b);
+}
+
+int	main(int ac, char **av)
+{
+	t_lst	*a;
+	t_lst	*b;
 
 	a = NULL;
 	b = NULL;
@@ -55,18 +69,7 @@ int main(int ac, char **av)
 	if (!init_index(&a))
 		return (0);
 	if (!list_is_sorted(a))
-	{
-		if (size_lst(a) == 2)
-			sa(&a);
-		else if (size_lst(a) == 3)
-			sort_three_element(&a);
-		else if (size_lst(a) == 4)
-			sort_four_element(&a, &b);
-		else if (size_lst(a) == 5)
-			sort_five_element(&a, &b);
-		if (size_lst(a) >= 6)
-			sort_stack(&a, &b);
-	}
+		ft_choose_sorting(a, b);
 	free_stack(&a);
 	return (0);
 }

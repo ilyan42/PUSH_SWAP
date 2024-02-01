@@ -3,12 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
+#    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2024/02/01 14:29:03 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2024/02/01 19:07:00 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME = push_swap
+
+CC = gcc -g3
+CFLAGS = -Wall -Wextra -Werror
+LDFLAGS = -Llibft -lft
+
+LIBFT_DIR = ./libft
+LIBFT = $(LIBFT_DIR)/libft.a
+LIBFT_MAKE = $(MAKE) -C $(LIBFT_DIR)
 
 SRCS = 			src/main.c\
 				src/ft_init_list_a.c\
@@ -22,15 +32,6 @@ SRCS = 			src/main.c\
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = push_swap
-
-CC = gcc -g3
-CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -LLIBFT -lft
-
-LIBFT_DIR = ./LIBFT
-LIBFT = $(LIBFT_DIR)/libft.all
-LIBFT_MAKE = $(MAKE) -C $(LIBFT_DIR)
 
 all: $(NAME)
 
@@ -38,7 +39,7 @@ $(NAME): $(OBJS) $(LIBFT)
 	$(LIBFT_MAKE)
 	$(CC) $(CFLAGS) -Iinclude -Ilibft $(OBJS) -o $(NAME) $(LDFLAGS)
 
-%.o: %.c include/minitalk.h
+%.o: %.c include/push_swap.h
 	$(CC) $(CFLAGS) -Iinclude -Ilibft -c $< -o $@
 
 $(LIBFT):

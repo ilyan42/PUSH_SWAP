@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_element.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:55:46 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/25 14:12:59 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 19:20:17 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void reverse_rotate_element(t_lst **lst)
+void	reverse_rotate_element(t_lst **lst)
 {
-	t_lst *last;
-	t_lst *tmp;
+	t_lst	*last;
+	t_lst	*tmp;
 
 	if (!(*lst) || !(*lst)->next)
 		return ;
-
 	last = *lst;
 	tmp = NULL;
 	while (last->next != NULL)

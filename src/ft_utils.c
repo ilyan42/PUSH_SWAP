@@ -6,17 +6,17 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:01:35 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/31 11:37:23 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:18:17 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-long ft_atol(char *str)
+long	ft_atol(char *str)
 {
-	long nb;
-	int sign;
-	int i;
+	long	nb;
+	int		sign;
+	int		i;
 
 	i = 0;
 	sign = 1;
@@ -37,7 +37,7 @@ long ft_atol(char *str)
 	return (nb * sign);
 }
 
-size_t size_lst(t_lst *lst)
+size_t	size_lst(t_lst *lst)
 {
 	int	count;
 
@@ -50,13 +50,13 @@ size_t size_lst(t_lst *lst)
 	return (count);
 }
 
-t_lst *ft_lstmax(t_lst *lst)
+t_lst	*ft_lstmax(t_lst *lst)
 {
-	t_lst *max;
-	int max_element;
-	
+	t_lst	*max;
+	int		max_element;
+
 	max_element = 0;
-	while(lst)
+	while (lst)
 	{
 		if (lst->nb > max_element)
 		{
@@ -68,36 +68,35 @@ t_lst *ft_lstmax(t_lst *lst)
 	return (max);
 }
 
-#include <stdio.h>
 int	ft_get_min_value(t_lst **lst)
 {
-	t_lst *head;
-    int min_value;
+	t_lst	*head;
+	int		min_value;
 
 	head = *lst;
 	min_value = INT_MAX;
-    while (head)
-    {
-        if (head->nb < min_value)
-            min_value = head->nb;
-        head = head->next;
-    }
-	return min_value;
+	while (head)
+	{
+		if (head->nb < min_value)
+			min_value = head->nb;
+		head = head->next;
+	}
+	return (min_value);
 }
 
-int ft_get_min(t_lst **lst)
+int	ft_get_min(t_lst **lst)
 {
-	t_lst *head;
-    int min_value;
-	int pos;
+	t_lst	*head;
+	int		min_value;
+	int		pos;
 
 	head = *lst;
 	min_value = ft_get_min_value(lst);
 	pos = 0;
-    while (head->nb != min_value)
-    {
+	while (head->nb != min_value)
+	{
 		pos++;
-        head = head->next;
-    }
+		head = head->next;
+	}
 	return (pos);
 }

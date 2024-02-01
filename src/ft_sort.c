@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:44:37 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/02/01 16:38:52 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 19:19:22 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
 bool	list_is_sorted(t_lst *stack)
 {
@@ -23,13 +22,12 @@ bool	list_is_sorted(t_lst *stack)
 			return (false);
 		stack = stack->next;
 	}
-	
 	return (true);
 }
 
 void	sort_three_element(t_lst **lst)
 {
-	t_lst *max_element;
+	t_lst	*max_element;
 
 	max_element = ft_lstmax(*lst);
 	if (*lst == max_element)
@@ -40,9 +38,9 @@ void	sort_three_element(t_lst **lst)
 		sa(lst);
 }
 
-void sort_four_element(t_lst **a, t_lst **b)
+void	sort_four_element(t_lst **a, t_lst **b)
 {
-	int min;
+	int	min;
 
 	min = ft_get_min(a);
 	if (list_is_sorted(*a))
@@ -58,14 +56,14 @@ void sort_four_element(t_lst **a, t_lst **b)
 		rra(a);
 	if (list_is_sorted(*a))
 		return ;
-    pb(a, b);
-    sort_three_element(a);
-    pa(b, a);
+	pb(a, b);
+	sort_three_element(a);
+	pa(b, a);
 }
 
-void sort_five_element(t_lst **a, t_lst **b)
+void	sort_five_element(t_lst **a, t_lst **b)
 {
-	int min;
+	int	min;
 
 	min = ft_get_min(a);
 	if (list_is_sorted(*a))
@@ -87,39 +85,23 @@ void sort_five_element(t_lst **a, t_lst **b)
 	if (list_is_sorted(*a))
 		return ;
 	pb(a, b);
-
-	min = ft_get_min(a);
-	if (list_is_sorted(*a))
-		return ;
-	else if (min == 1)
-		ra(a);
-	else if (min == 2)
-	{
-		ra(a);
-		ra(a);
-	}
-	else if (min == 3)
-		rra(a);
-	if (list_is_sorted(*a))
-		return ;
-	pb(a, b);
-	sort_three_element(a);
+	sort_four_element(a, b);
 	pa(b, a);
-    pa(b, a);
+	pa(b, a);
 }
 
-void sort_stack(t_lst **a, t_lst **b)
+void	sort_stack(t_lst **a, t_lst **b)
 {
-	int i;
-	int j;
-	int size;
+	int	i;
+	int	j;
+	int	size;
 
 	size = size_lst(*a);
 	j = 0;
-	while(!list_is_sorted(*a))
+	while (!list_is_sorted(*a))
 	{
 		i = 0;
-		while(i < size)
+		while (i < size)
 		{
 			if ((((*a)->content >> j) & 1) == 0)
 				pb(a, b);

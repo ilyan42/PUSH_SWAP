@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_element.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:06:58 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/01/24 17:54:17 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 19:21:09 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void rotate_element(t_lst **lst)
+void	rotate_element(t_lst **lst)
 {
-	t_lst *first;
-	t_lst *last;
+	t_lst	*first;
+	t_lst	*last;
 
 	if (!(*lst) || !(*lst)->next)
-		return;
-
+		return ;
 	first = *lst;
 	*lst = first->next;
 	last = ft_lstlast_node(*lst);
