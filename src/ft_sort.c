@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:44:37 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/01/31 19:12:30 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 12:18:02 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,9 +128,7 @@ void sort_stack(t_lst **a, t_lst **b)
 			i++;
 		}
 		while (*b)
-		{
 			pa(a, b);
-		}
 		j++;
 	}
 }
@@ -140,7 +138,7 @@ void sort_stack(t_lst **a, t_lst **b)
 //     int j = 0;
 //     int size;
 
-//     while (!list_is_sorted(a))
+//     while (!list_is_sorted(*a))
 //     {
 //         size = size_lst(*a);  // Mise à jour de la taille à chaque itération
 //         int i = 0;
