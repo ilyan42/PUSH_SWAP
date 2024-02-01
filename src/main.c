@@ -3,14 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:43:50 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/02/01 16:04:43 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:38:59 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+static int	init_index(t_lst **stack_a)
+{
+	t_lst	*head;
+	t_lst	*iter;
+	int		flg;
+
+	iter = (*stack_a);
+	while (iter)
+	{
+		flg = 0;
+		head = (*stack_a);
+		iter->content = 0;
+		while (head)
+		{
+			if (iter->nb == head->nb)
+				flg += 1;
+			if (iter->nb > head->nb)
+				iter->content += 1;
+			head = head->next;
+		}
+		if (flg != 1)
+			return (0);
+		iter = iter->next;
+	}
+	return (1);
+}
 
 int main(int ac, char **av)
 {
@@ -25,6 +52,8 @@ int main(int ac, char **av)
 		ft_init_list_a(&a, ft_split(av[1], ' '), true);
 	else
 		ft_init_list_a(&a, av + 1, false);
+	if (!init_index(&a))
+		return (0);
 	if (!list_is_sorted(a))
 	{
 		if (size_lst(a) == 2)
