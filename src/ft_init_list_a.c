@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_list_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:09:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/02/01 14:39:22 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 16:15:55 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void adds_a_new_node(t_lst **lst, int x)
     }
 }
 
-void ft_init_list_a(t_lst **a, char **av)
+void ft_init_list_a(t_lst **a, char **av, bool free_mod)
 {
 	long	x;
 	int		i;
@@ -57,11 +57,13 @@ void ft_init_list_a(t_lst **a, char **av)
 	while(av[i])
 	{
 		if (error_syntax(av[i]))
-			exit(EXIT_FAILURE);
+			free_errors(a, "invalide syntax\n", av, free_mod);
 		x = ft_atol(av[i]);
 		if (error_is_double(*a, (int)x))
-			exit(EXIT_FAILURE);
+			free_errors(a, "two numbers are equal\n", av, free_mod);	
 		adds_a_new_node(a, (int)x);
 		i++;
 	}
+	if (free_mod)
+		free2d(av);
 }

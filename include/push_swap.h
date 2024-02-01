@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:41:52 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/02/01 14:33:55 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/02/01 16:16:34 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_lst
 
 /**** FT_INIT_LIST_A ****/
 
-void ft_init_list_a(t_lst **a, char **av);
+void ft_init_list_a(t_lst **a, char **av, bool free_mod);
 
 /**** MOVES ****/
 
@@ -59,12 +59,14 @@ long ft_atol(char *str);
 t_lst	*ft_lstlast_node(t_lst *lst);
 size_t size_lst(t_lst *lst);
 t_lst *ft_lstmax(t_lst *lst);
-void ft_min_on_top(t_lst **lst);
 int ft_get_min(t_lst **lst);
 
 /**** FT_CHECK_ERRORS ****/
 
 bool	error_syntax(const char *str);
 bool	error_is_double(t_lst *a, int x);
+void	free_errors(t_lst **a, char *error_msg, char **str, bool free_mod);
+void	free_stack(t_lst **stack);
+void	free2d(char **str);
 
 #endif
